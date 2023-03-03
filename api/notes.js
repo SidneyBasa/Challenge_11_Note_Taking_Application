@@ -7,6 +7,8 @@ const express = require('express');
 const router = express.Router();
 const fs = require("fs")
 
+const { v4: uuidv4 } = require('uuid');
+
 // route to read notes
 router.get("/", (req, res) => {
     fs.readFile("./db/db.json", "utf-8", (err, data) => {
@@ -39,7 +41,10 @@ router.get("/", (req, res) => {
         // }
         console.log("Test of notes data", data)
 
-        notesData.push(req.body);
+        const newNote = {id:uuidv4(), text:req.body.text, title:req.body.title}
+
+        notesData.push(newNote);
+        console.log("test of new note notes.js",newNote)
         fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (err) => {
           if (err) {
             res.status(500).send("oh no!");
@@ -110,13 +115,16 @@ router.get("/", (req, res) => {
         throw err;
       } else {
         let notesData = JSON.parse(data);
-        notesData = notesData.filter((note) => {
-          if (note.id == req.params.id) {
-            return false;
-          } else {
-            return true;
-          }
-        });
+        notesData = notesData.filter((note) => note.id != req.params.id)
+        console.log("test of note", notesData)
+        //   // note id equals params id 
+        //   // skip everything that is not this id
+        //   if (note.id == req.params.id) {
+        //     return false;
+        //   } else {
+        //     return true;
+        //   }
+        // );
         fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (err) => {
           if (err) {
             res.status(500).send("oh no!");

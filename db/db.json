@@ -1,14 +1,32 @@
 [
     {
         "title": "Test Title",
-        "text": "Test text"
+        "text": "Test text",
+        "id": "23413b50-11ad-4416-123e-12323a6c123d"
     },
     {
         "title": "Test of new note",
-        "text": "Test"
+        "text": "Test",
+        "id": "23413b50-11ad-4416-9f9e-12323a6c123d"
     },
     {
-        "title": "test of third note",
-        "text": "test"
+        "title": "Test of new note",
+        "text": "5th test\n",
+        "id": "23413b50-11ad-4416-9f9e-c8d1aa6c4c7d"
+    },
+    {
+        "title": "Hello this is note #6",
+        "text": "This is a new note at the text side",
+        "id": "123313b5-11ad-4416-9f9e-c8d1aa6c4c7d"
+    },
+    {
+        "id": "617313b5-11ad-4416-9f9e-c8d1aa6c4c7d",
+        "text": "Test 2nd test",
+        "title": "Test new 7"
+    },
+    {
+        "id": "f2bfb6ba-a329-4ddb-b00f-f427ebca52d0",
+        "text": "Please check the window at console.log(window) because it is working\nWith Google's Chrome on a Windows 11 machine\nThank you have a nice day.\n-Sidney",
+        "title": "The window is console loggab"
     }
 ]
